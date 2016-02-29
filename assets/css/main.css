@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: red;
+}
+li {
+  list-style: none;
+}
+
+/* =====================================================================
+HEADER CONTAINER STYLING : includes main-menu and sub-menu
+===================================================================== */
+
+header .container {
+
+
+}
+
+
+
+
+/* ==============================================
+MENU ICON STYLING
+============================================== */
+
+#nav-toggle span {
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+/* ======================
+Hamburger Icon
+====================== */
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: .0625em;
+  height: .3125em;
+  width: 2.1875em;
+  background: black;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -0.625em;
+}
+#nav-toggle span:after {
+  bottom: -0.625em;
+}
+
+/* ======================
+Transition to X icon
+====================== */
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  position: fixed;
+  margin-top: 2em;
+  transform: rotate(45deg);
+  z-index: 20;
+  background: white;
+}
+#nav-toggle.active span:after {
+  position: fixed;
+  margin-top: 2em;
+  transform: rotate(-45deg);
+  z-index: 20;
+  background: white;
+}
+
+/* ==============================================
+MAIN MENU STYLING
+============================================== */
+
+.main-menu {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .70);
+  width: 30%;
+  height: 100vh;
+}
+.main-menu ul li {
+  margin: 20%;
+  padding: .25em;
+  font-size: 1.5em;
+}
+
+/* ======================
+Hover Styling
+====================== */
+
+.main-menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: .5em;
+}
+
+/* ======================
+Selected Link Styling
+====================== */
+
+.main-menu .selected a {
+  color: black;
+  font-weight: bolder;
+}
+
+/* ==============================================
+SUB MENUS
+============================================== */
+
+.sub-menu ul li {
+  position: relative;
+  display: inline-block;
+  margin: 1em 7%;
+  padding: .25em 0;
+  font-size: 1.25em;
+  width: 19%;
+  text-align: center;
+}
+
+/* ======================
+Hover Styling
+====================== */
+
+.sub-menu ul li:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: .5em;
+}
+
+/* ======================
+Selected Link Styling
+====================== */
+
+.sub-menu .selected a {
+  color: black;
+  font-weight: bolder;
+}
+
+/* ==============================================
+PAGE CONTENT
+============================================== */
+
+.content {
+  padding-top: 3%;
+  clear: both;
+  max-width: 80%;
+  margin: 0 10%
+}
+
+/* ==============================================
+FOOTER STYLING
+============================================== */
+
+footer {
+  display: inline-block;
+  color: red;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 0 auto;
+  font-size: 1em;
+  width: 100%;
+}
+.footer-logo{
+  float: left;
+  clear: both;
+  padding: 1em;
+  margin-top: 1em;
+  margin-left: 10%;
+}
+
+.contact, .address {
+  padding: 1em;
+  float: right;
+  clear: none;
+}
+.contact {
+  margin-right: 10%;
+}
+.copyright {
+  clear: both;
+  text-align: center;
+  width: 100%;
+  padding: 1em;
+  font-size: .6875em;
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.social-icons i {
+  font-size: 2em;
+  padding: .3125em;
+}
+
+/* ======================
+Hidden Footer Styling
+====================== */
+
+.wrap {
+  min-height: 100vh;
+}
+
+
+@media( ) {
+
+}
+
+
+
+
+
+
+
+/* ======================
+Sticky Footer (change the px amount to change the size)
+
+ .wrap {
+  calc(100vh - 43px);
+}
+====================== */
+
+/* ======================
+Hamburger Icon using Awesome Font
+
+.hamburger {
+  position: relative;
+  margin: 1em;
+  padding: 0;
+  line-height: 100%;
+  background-color: rgba(255, 255, 255, .95);
+  border: none;
+  font-size: 1.75em;
+  float: left;
+  z-index: 20;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburger .fa-times {
+  line-height: 105%;
+  padding: 0;
+  background-color: rgba(0,0,0, .70);
+  color: white;
+}
+====================== */
