@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/css/main2.css">
-  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 </head>
 
 <body>
@@ -19,13 +18,13 @@
                    Hamburger & X icons in Font Awesome
   <button class="hamburger minimize"><i class="fa fa-bars" id="menu_icon"></i></button>
 -->
-            <a class="nav-toggle" href="#"><span></span></a>
+          <a class="nav-toggle" href="#"><span></span></a>
           <div class="main-menu">
             <ul>
               <li><a href="../index.html">Home</a></li>
               <li><a href="../conference/index.html">Conference</a></li>
-              <li><a href="../resources/index.html">Resources</a></li>
-              <li class="selected"><a href="../about/index.html">About</a></li>
+              <li class="selected"><a href="../resources/index.html">Resources</a></li>
+              <li><a href="../about/index.html">About</a></li>
               <li>
                 <a href=""></a>
               </li>
@@ -36,29 +35,29 @@
               <li class="selected"><a href="index.html">About</a></li>
               <li><a href="contributors.html">Contributors</a></li>
               <li><a href="contact.html">Contact</a></li>
+              <li><a href="ask.html">Ask</a></li>
             </ul>
           </div>
         </div>
       </header>
     </div>
-    <div class="content">
-      <p>
-        The Andrew Fuller Center for Baptist Studies, located at The Southern Baptist Theological Seminary in Louisville, Kentucky, seeks to promote the study of Baptist history as well as theological reflection on the contemporary significance of that history.
-        The center is named in honor of Andrew Fuller (1754-1815), the late eighteenth- and early nineteenth- century English Baptist pastor and theologian, who played a key role in opposing aberrant thought in his day as well as being instrumental in
-        the founding and early years of the Baptist Missionary Society. Fuller was a close friend and theological mentor of William Carey, one of the pioneers of that society.
-      </p>
-      <br>
-      <p>
-        “When English Baptist life was threatened by the winter chill of hyper-Calvinism, Andrew Fuller warmed the churches with the free offer of the Gospel, and thus fuelled the modern missions movement,” Russell D. Moore, Dean of the School of Theology and
-        Senior Vice-President for Academic Administration at Southern, has noted with regard to the theological importance of Andrew Fuller.
-      </p>
-      <br>
-      <p>
-        The Andrew Fuller Center holds an annual two-day conference in August that examines various aspects of Baptist history and thought. It also supports the publication of the critical edition of the Works of Andrew Fuller, and from time to time, other works
-        in Baptist history. In time, it is hoped that the Center will be able to play a role in the mentoring of junior scholars interested in studying Baptist history. Twice each year, in the spring and the fall, the Andrew Fuller Center publishes Eusebeia,
-        a journal that carries articles and books reviews related to Baptist history and thought.
-      </p>
-    </div>
+  </div>
+  <div class="content">
+    <form class="ask-form" action="http://formspree.io/jswanson@sbts.edu"
+      method="POST">
+      <h1>Question?</h1>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email-address">
+
+      <label for="question">Question:</label>
+      <textarea id="question" name="question"></textarea>
+
+      <input type="submit" id="submit" value="Send">
+    </form>
   </div>
   <footer>
     <div class="footer">
@@ -79,11 +78,11 @@
       <div class="address col">
         <h1>Address</h1>
         <address>
-            The Andrew Fuller Center<br>
-            The Southern Baptist Theological Seminary<br>
-            2825 Lexington Rd.<br>
-            Louisville, KY  40280<br>
-          </address>
+          The Andrew Fuller Center<br>
+          The Southern Baptist Theological Seminary<br>
+          2825 Lexington Rd.<br>
+          Louisville, KY  40280<br>
+        </address>
       </div>
     </div>
     <div class="copyright">Copyright © 2008 – 2016, The Andrew Fuller Center of the Southern Baptist Theological Seminary</div>
