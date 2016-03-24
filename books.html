@@ -5,13 +5,16 @@
   <meta charset="utf-8">
   <title>Andrew Fuller Center</title>
 
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="assets/js/angular/main.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
-
 </head>
 
 <body>
@@ -24,37 +27,37 @@
       <a class="nav-toggle" href="#"><span></span></a>
       <div class="main-menu">
         <ul>
-          <li class="selected"><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="andrew-fuller.html">Andrew Fuller</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="books.html">Books</a></li>
+          <li class="selected"><a href="books.html">Books</a></li>
           <li><a href="ask.html">Ask</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </div>
     </div>
   </header>
-  <main>
-    <div class="content">
-      <div class="twitter-wjs" style="width: 300px; height: 300px;">
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AFCBS" data-widget-id="704428933987606529" data-chrome="nofooter transparent">Tweets by @AFCBS</a>
-        <script>
-          ! function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-              p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-              js = d.createElement(s);
-              js.id = id;
-              js.src = p + "://platform.twitter.com/widgets.js";
-              fjs.parentNode.insertBefore(js, fjs);
-            }
-          }(document, "script", "twitter-wjs");
-        </script>
+  <main ng-controller="bookCtrl" ng-app="bookApp">
+<div class="content">
+  <div class="list-style">
+    <button ng-click="toggleCover()"><i class="fa fa-th"></i></button>
+    <button ng-click="toggleTitle()"><i class="fa fa-align-justify"></i></button>
+    <!--  <button ng-hide="full" ng-click="toggleFull()"><i class="fa fa-th-list"></i></button> -->
+  </div>
+      <div ng-class="[{'cover': coverOnly}, {'title': titleOnly}]">
+        <div ng-repeat="book in books">
+          <img src="{{ book.url }}">
+          <h2>{{ book.title }}</h2>
+          <h3>{{ book.subtitle }}</h3>
+          <p>{{ book.description }}</p>
+        </div>
       </div>
+
     </div>
-    <div class="footer-expander">
-      <button class="arrow"><i class="fa fa-chevron-down"></i></button>
-    </div>
+      <div class="footer-expander">
+        <button class="arrow"><i class="fa fa-chevron-down"></i></button>
+      </div>
+
   </main>
   <footer>
     <div class="footer-wrap">
@@ -87,6 +90,6 @@
     </div>
   </footer>
   <script src="assets/js/app.js"></script>
-</body>
+  < </body>
 
 </html>

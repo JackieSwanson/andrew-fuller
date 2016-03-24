@@ -3,78 +3,102 @@
   padding: 0;
   max-width: 100%;
 }
+
+/* ============================
+Anchor Element Styling
+============================ */
+
 a {
   text-decoration: none;
-  color: red;
+  color: white;
 }
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+Button Styling
+============================ */
+
+button {
+  border: none;
+  background-color: transparent;
+}
+button:focus {
+  outline: none;
+}
+
+/* ============================
+Header Text Styling
+============================ */
+
+h2 {
+  font-size: 1.25em;
+  font-weight: bolder;
+}
+h3 {
+  font-size: 1em;
+}
+
+/* ============================
+List Styling
+============================ */
+
 li {
   list-style: none;
 }
 
-/* =====================================================================
-HEADER CONTAINER STYLING : includes main-menu and sub-menu
-===================================================================== */
-
-header .container {
-
-
-}
-
-
-
-
 /* ==============================================
-MENU ICON STYLING
+BODY STYLING
 ============================================== */
 
-#nav-toggle span {
-  margin-top: 2em;
-  margin-left: 2em;
+body {
+  min-height: 100vh;
+  background: url("../pics/library-only.png") no-repeat center center fixed, url("../pics/library3.png") no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+header,
+main,
+footer{
+  flex:1;
+}
+main {
+  display: flex;
+  flex-direction: column;
 }
 
-/* ======================
-Hamburger Icon
-====================== */
-
-#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
-  cursor: pointer;
-  border-radius: .0625em;
-  height: .3125em;
-  width: 2.1875em;
-  background: black;
-  position: absolute;
-  display: block;
-  content: '';
+.content {
+  height: calc(90vh - 100px);
+  margin-top: 60px;
 }
-#nav-toggle span:before {
-  top: -0.625em;
-}
-#nav-toggle span:after {
-  bottom: -0.625em;
+.content,
+.footer-expander {
+  flex: 1;
+  width: 100%;
 }
 
-/* ======================
-Transition to X icon
-====================== */
+.footer-expander {
+  height: 10vh;
+  min-height: 50px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 5px;
+}
 
-#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
-  transition: all 500ms ease-in-out;
-}
-#nav-toggle.active span {
-  background-color: transparent;
-}
-#nav-toggle.active span:before, #nav-toggle.active span:after {
-  top: 0;
-}
-#nav-toggle.active span:before {
-  transform: rotate(45deg);
-  z-index: 20;
-  background: white;
-}
-#nav-toggle.active span:after {
-  transform: rotate(-45deg);
-  z-index: 20;
-  background: white;
+/* ==============================================
+FIXED HEADER STYLING
+============================================== */
+
+header {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 50px;
+  width: 100%;
 }
 
 /* ==============================================
@@ -82,177 +106,329 @@ MAIN MENU STYLING
 ============================================== */
 
 .main-menu {
-  position: fixed;
   z-index: 10;
   display: none;
   background-color: rgba(0, 0, 0, .70);
-  width: 30%;
+  width: 100%;
   height: 100vh;
 }
 .main-menu ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 45px;
+  max-height: 100vh;
 }
 .main-menu ul li {
-  margin: 20%;
+  margin-top: 1em;
   padding: .25em;
   font-size: 1.5em;
 }
 
-/* ======================
-Hover Styling
-====================== */
-
-.main-menu ul li:hover {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: .5em;
-}
-
-/* ======================
-Selected Link Styling
-====================== */
-
-.main-menu .selected a {
-  color: black;
-  font-weight: bolder;
-}
-
 /* ==============================================
-SUB MENUS
+MENU ICON STYLING
 ============================================== */
 
-.sub-menu ul li {
-  position: relative;
-  display: inline-block;
-  margin: 1em 7%;
-  padding: .25em 0;
-  font-size: 1.25em;
-  width: 19%;
-  text-align: center;
+.nav-toggle span {
+  margin-top: 1.5em;
+  margin-left: 1.5em;
 }
 
 /* ======================
-Hover Styling
+Hamburger Icon
 ====================== */
 
-.sub-menu ul li:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: .5em;
+.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+  cursor: pointer;
+  border-radius: .0625em;
+  height: .25em;
+  width: 1.75em;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+.nav-toggle span:before {
+  top: -0.5em;
+}
+.nav-toggle span:after {
+  bottom: -0.5em;
 }
 
 /* ======================
-Selected Link Styling
+Transition to X icon
 ====================== */
 
-.sub-menu .selected a {
-  color: black;
-  font-weight: bolder;
+.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+.nav-toggle.active span {
+  background-color: transparent;
+}
+.nav-toggle.active span:before, .nav-toggle.active span:after {
+  top: 0;
+}
+.nav-toggle.active span:before {
+  transform: rotate(45deg);
+/*  z-index: 20; */
+  background: white;
+}
+.nav-toggle.active span:after {
+  transform: rotate(-45deg);
+  /*  z-index: 20; */
+  background: white;
 }
 
 /* ==============================================
-PAGE CONTENT
+CONTENT STYLING
 ============================================== */
 
 .content {
-  padding-top: 3%;
-  clear: both;
-  max-width: 80%;
-  margin: 0 10%
+  width: 85%;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+}
+
+.content h2,
+.content h3,
+.content p {
+text-align: left;
+padding-bottom: .6em;
+}
+.content img {
+  height: 346px;
+  padding: 1em;
+}
+.content {
+  color: white;
+  overflow-y: scroll;
 }
 
 /* ==============================================
 FOOTER STYLING
 ============================================== */
-
-footer {
-  display: inline-block;
-  color: red;
+footer.open {
+  min-height: calc(100vh - 50px);
   background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  overflow: scroll;
+  width: 100%;
+}
+main.open {
+  flex: 0;
+}
+.content.open {
+  display: none;
+}
+.footer-expander.open{
+  position: relative;
+  max-height: 50px;
+}
+.footer-wrap {
+  display: none;
+}
+.footer-wrap.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 2em;
+}
+.content {
+  width: 85%;
+}
+.copyright,
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
   margin: 0 auto;
   font-size: 1em;
-  width: 100%;
+  align-items: center;
 }
-.footer-logo{
-  float: left;
-  clear: both;
-  padding: 1em;
-  margin-top: 1em;
-  margin-left: 10%;
-}
-
-.contact, .address {
-  padding: 1em;
-  float: right;
-  clear: none;
-}
-.contact {
-  margin-right: 10%;
-}
-.copyright {
-  clear: both;
+.content,
+.copyright,
+.col {
   text-align: center;
-  width: 100%;
-  padding: 1em;
-  font-size: .6875em;
-  color: rgba(255, 0, 0, 0.8);
+}
+.copyright,
+.footer-logo {
+  padding-top: 2em;
+}
+.sub-menu,
+.copyright {
+  padding-bottom: 2em;
+}
+.footer-logo {
+  display: none;
 }
 
-.social-icons i {
-  font-size: 2em;
-  padding: .3125em;
+/* ==============================================
+RESOURCES : BOOKS: Cover Only Book View
+============================================== */
+.cover h2,
+.cover h3,
+.cover p {
+  display: none;
 }
 
-/* ======================
-Hidden Footer Styling
-====================== */
-
-.wrap {
-  min-height: 100vh;
+.cover{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cover {
+  flex-grow: 1;
+}
+.cover img {
+  height: 200px;
+  max-width: 177px;
 }
 
+/* ==============================================
+RESOURCES : BOOKS: View Icons
+============================================== */
 
-@media( ) {
-
+.list-style {
+  font-size: 1.5em;
+  padding: none;
+  display: flex;
+  justify-content: flex-end;
 }
-
-
-
-
-
-
-
-/* ======================
-Sticky Footer (change the px amount to change the size)
-
- .wrap {
-  calc(100vh - 43px);
-}
-====================== */
-
-/* ======================
-Hamburger Icon using Awesome Font
-
-.hamburger {
-  position: relative;
-  margin: 1em;
-  padding: 0;
-  line-height: 100%;
-  background-color: rgba(255, 255, 255, .95);
-  border: none;
-  font-size: 1.75em;
-  float: left;
-  z-index: 20;
-}
-
-.hamburger:focus {
-  outline: none;
-}
-
-.hamburger .fa-times {
-  line-height: 105%;
-  padding: 0;
-  background-color: rgba(0,0,0, .70);
+.fa-th {
+  padding: .5em;
   color: white;
 }
+.fa-align-justify,
+.fa-th-list {
+  padding: .5em .5em .5em 0;
+  color: white;
+}
+.fa-chevron-down {
+  font-size: 1.5em;
+  color: white;
+}
+.fa-chevron-up {
+  font-size: 1.5em;
+  color: white;
+}
+
+/* ==============================================
+RESOURCES : BOOKS: Title Only Book View
+============================================== */
+
+.title img,
+.title p {
+  display: none;
+}
+
+/* ==============================================
+ABOUT : ASK : Form Styling
+============================================== */
+.ask-form {
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  text-align: left;
+  padding: 1em 0;
+  font-weight: 600;
+}
+form input,
+form textarea {
+  height: 1.5em;
+  background-color: rgba(125, 125, 125, 0.7);
+  border: 1px solid white;
+  border-radius: 4px;
+}
+input:focus,
+textarea:focus {
+  border: 3px solid white;
+  outline: none;
+}
+.faq {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* ======================
+Submit Button
 ====================== */
+#submit {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: .3em;
+  width: 160px;
+  margin-top: 1.5em;
+}
+
+.twitter-wjs {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0;
+}
+
+
+
+/* =====================================================
+media queries
+===================================================== */
+
+@media (min-width:520px){
+  .nav-toggle span {
+    display: none;
+  }
+  .main-menu {
+    display: flex;
+    max-height: 50px;
+    background-color: transparent;
+  }
+  .main-menu ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .main-menu ul li {
+    margin: 0;
+    align-items: center;
+    padding-right: 1em;
+    text-align:center;
+    font-size: 1em;
+  }
+}
+.footer{
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+.footer-logo {
+  display: inherit;
+  flex-grow: 1;
+  width: 100%;
+  justify-content: center;
+}
+.footer-logo img{
+  height: 200px;
+  min-width: 271px;
+}
+.contact,
+.address {
+  padding-right: 2em
+}
+@media (min-width:900px){
+.footer {
+  justify-content: space-around;
+}
+.footer-logo {
+  flex-grow: 3;
+  align-self: flex-start;
+  max-width: 40%;
+}
+.contact,
+.address {
+  flex-grow: 1;
+}
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Andrew Fuller Center</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+      <header>
+        <div class="container">
+          <!--
+                 Hamburger & X icons in Font Awesome
+<button class="hamburger minimize"><i class="fa fa-bars" id="menu_icon"></i></button>
+-->
+          <a class="nav-toggle" href="#"><span></span></a>
+          <div class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="andrew-fuller.html">Andrew Fuller</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="books.html">Books</a></li>
+              <li class="selected"><a href="ask.html">Ask</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+  <main>
+  <div class="content" ng-app="questionsApp" ng-controller="questionsCtrl">
+    <form class="ask-form" action="http://formspree.io/jswanson@sbts.edu" method="POST" ng-submit="addQuestion()">
+      <h1>Question?</h1>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" ng-model="fullName">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email-address" ng-model="email">
+
+      <label for="question">Question:</label>
+      <textarea id="question" name="question" ng-model="question"></textarea>
+
+      <input type="submit" id="submit" value="Send" ng-click="inputClear()">
+    </form>
+    <div class="faq">
+      <h1>Q & A</h1>
+      <ul ng-repeat="question in questions">
+        <li>
+          <h2>{{question.question}}</h2>
+          <p>{{question.answer}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-expander">
+    <button class="arrow"><i class="fa fa-chevron-down"></i></button>
+  </div>
+</main>
+<footer>
+  <div class="footer-wrap">
+  <div class="footer">
+    <div class="footer-logo col">
+      <img src="assets/pics/nameonly.png" alt="" />
+    </div>
+    <div class="contact col">
+      <h1>Contact</h1>
+      <ul>
+        <li>(502) 897-4613</li>
+        <li><a href="mailto:andrewfullercenter@sbts.edu">andrewfullercenter@sbts.edu</a></li>
+        <li class="social-icons">
+          <a href="https://twitter.com/afcbs" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.facebook.com/AndrewFullerCenter/" target="_blank"><i class="fa fa-facebook"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="address col">
+      <h1>Address</h1>
+      <address>
+      The Andrew Fuller Center<br>
+      The Southern Seminary<br>
+      2825 Lexington Rd.<br>
+      Louisville, KY 40280<br>
+    </address>
+    </div>
+  </div>
+  <div class="copyright">Copyright © 2008 – 2016, The Andrew Fuller Center of the Southern Baptist Theological Seminary</div>
+    </div>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/angular/questions.js"></script>
+</body>
+
+</html>

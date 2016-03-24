@@ -11,6 +11,17 @@ $(".nav-toggle").click(function() {
   $(this).toggleClass("active");
   $(".main-menu").toggle();
 });
+$(".arrow").click(function(){
+  $("footer").toggleClass("open");
+  $(".content").toggleClass("open");
+  $("main").toggleClass("open");
+  $(".footer-expander").toggleClass("open");
+  $(".footer-wrap").toggleClass("open");
+  $(".arrow i").toggleClass("fa-chevron-down");
+  $(".arrow i").toggleClass("fa-chevron-up");
+});
+
+/*
 $(".fa-th").click(function() {
   $(".content").toggleClass("cover").removeClass("description").removeClass("title");
 });
@@ -23,4 +34,4 @@ $(".fa-th-list").click(function() {
 $(".cover-pic").click(function (event){
   event.preventDefault();
   $(this).parent().toggleClass("lightbox");
-});
+});*/

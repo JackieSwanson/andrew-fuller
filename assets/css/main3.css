@@ -5,7 +5,10 @@
 }
 a {
   text-decoration: none;
-  color: red;
+  color: white;
+}
+a:hover {
+  text-decoration: underline;
 }
 li {
   list-style: none;
@@ -44,7 +47,7 @@ Hamburger Icon
   height: .3125em;
   width: 2.1875em;
   background: black;
-  position: absolute;
+  position: fixed;
   display: block;
   content: '';
 }
@@ -103,26 +106,6 @@ MAIN MENU STYLING
 }
 
 /* ==============================================
-SUB MENU STYLING
-============================================== */
-
-.sub-menu{
-background-color: rgba(100, 100, 100, 0.7)
-}
-.sub-menu ul {
-  display: flex;
-  padding-top: 1em;
-  font-size: 1.5em;
-}
-.sub-menu ul {
-  flex-direction: column;
-  align-items: center;
-}
-.sub-menu ul li {
-  line-height: 1.75em;
-}
-
-/* ==============================================
 BODY STYLING
 ============================================== */
 
@@ -130,14 +113,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: url("../pics/library.png") no-repeat center center fixed;
+  background-size: cover;
 }
+.content {
+  height: 80%;
+}
+
 .content h2,
 .content h3,
 .content p {
 text-align: left;
 padding-bottom: .6em;
 }
-.content li img {
+.content img {
   height: 346px;
   padding: 1em;
 }
@@ -156,7 +145,7 @@ FOOTER STYLING
 .footer {
   display: flex;
   flex-direction: column;
-  color: red;
+  color: white;
   background-color: rgba(0, 0, 0, 0.7);
   margin: 0 auto;
   font-size: 1em;
@@ -202,20 +191,20 @@ RESOURCES : BOOKS: View Icons
 /* ==============================================
 RESOURCES : BOOKS: Cover Only Book View
 ============================================== */
-
 .cover h2,
 .cover h3,
 .cover p {
   display: none;
 }
-.cover ul{
+
+.cover{
   display: flex;
   flex-wrap: wrap;
 }
-.cover li {
+.cover {
   flex-grow: 1;
 }
-.cover li img {
+.cover img {
   height: 200px;
   max-width: 177px;
 }
@@ -253,17 +242,51 @@ ABOUT : ASK : Form Styling
 form label {
   text-align: left;
   padding: 1em 0;
+  font-weight: 600;
 }
-form input {
+form input,
+form textarea {
   height: 1.5em;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid black;
+  border-radius: 4px;
 }
+input:focus,
+textarea:focus {
+  border: 3px solid black;
+  outline: none;
+}
+.faq {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
 /* ======================
 Submit Button
 ====================== */
 #submit {
-  background-color: red;
+  background-color: black;
+  color: white;
   border-radius: 5px;
   padding: .3em;
   width: 160px;
   margin-top: 1.5em;
+}
+
+.blogTitle,
+.blogPost {
+  color: black;
+}
+
+/* ==============================================
+MID-SIZED SCREENS
+============================================== */
+
+@media (min-width:520px){
+
+}
+
+
+.twoCollumn {
+
 }
