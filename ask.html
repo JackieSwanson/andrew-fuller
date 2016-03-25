@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
-
+<link href='https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica:400,400italic|Puritan:400,700,700italic|IM+Fell+Great+Primer+SC' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -29,14 +29,14 @@
               <li><a href="andrew-fuller.html">Andrew Fuller</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="books.html">Books</a></li>
-              <li class="selected"><a href="ask.html">Ask</a></li>
+              <li><a href="ask.html" class="selected">Ask</a></li>
               <li><a href="about.html">About</a></li>
             </ul>
           </div>
         </div>
       </header>
   <main>
-  <div class="content" ng-app="questionsApp" ng-controller="questionsCtrl">
+  <div class="content form-page" ng-app="questionsApp" ng-controller="questionsCtrl">
     <form class="ask-form" action="http://formspree.io/jswanson@sbts.edu" method="POST" ng-submit="addQuestion()">
       <h1>Question?</h1>
 

@@ -27,16 +27,31 @@ button {
 button:focus {
   outline: none;
 }
+.selected {
+  background-color: rgba(255,255,255,.70);
+  color: black;
+  border-radius: 5px;
+  padding: .25em;
+}
 
 /* ============================
 Header Text Styling
 ============================ */
+h1 {
+  font-family: 'IM Fell Great Primer SC', serif;
+}
 
 h2 {
-  font-size: 1.25em;
+  font-family: 'IM Fell Double Pica', serif;
+  font-size: 1.75em;
   font-weight: bolder;
 }
 h3 {
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 1.25em;
+}
+p {
+  font-family: 'Puritan', sans-serif;
   font-size: 1em;
 }
 
@@ -46,6 +61,7 @@ List Styling
 
 li {
   list-style: none;
+  font-family: 'Puritan', sans-serif;
 }
 
 /* ==============================================
@@ -54,7 +70,7 @@ BODY STYLING
 
 body {
   min-height: 100vh;
-  background: url("../pics/library-only.png") no-repeat center center fixed, url("../pics/library3.png") no-repeat center center fixed;
+  background: url("../pics/library.png") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
   display: flex;
@@ -72,7 +88,7 @@ main {
 
 .content {
   height: calc(90vh - 100px);
-  margin-top: 60px;
+  margin-top: 66px;
 }
 .content,
 .footer-expander {
@@ -117,7 +133,6 @@ MAIN MENU STYLING
   flex-direction: column;
   align-items: center;
   padding-top: 45px;
-  max-height: 100vh;
 }
 .main-menu ul li {
   margin-top: 1em;
@@ -210,9 +225,10 @@ FOOTER STYLING
 footer.open {
   min-height: calc(100vh - 50px);
   background-color: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  overflow: scroll;
   width: 100%;
+  height: 100%;
+  z-index: 15;
+  padding-top: 1em;
 }
 main.open {
   flex: 0;
@@ -232,6 +248,8 @@ main.open {
   flex-direction: column;
   justify-content: space-around;
   margin: 0 2em;
+  min-height: 422px;
+  overflow-y: scroll;
 }
 .content {
   width: 85%;
@@ -259,8 +277,16 @@ main.open {
 .copyright {
   padding-bottom: 2em;
 }
-.footer-logo {
+.footer-logo{
   display: none;
+}
+.contact li {
+  font-size: 1.25em;
+}
+address {
+  font-size: 1.25em;
+  font-family: 'Puritan', sans-serif;
+  font-style: normal;
 }
 
 /* ==============================================
@@ -275,6 +301,7 @@ RESOURCES : BOOKS: Cover Only Book View
 .cover{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .cover {
   flex-grow: 1;
@@ -290,9 +317,9 @@ RESOURCES : BOOKS: View Icons
 
 .list-style {
   font-size: 1.5em;
-  padding: none;
   display: flex;
   justify-content: flex-end;
+  padding-top: 40px;
 }
 .fa-th {
   padding: .5em;
@@ -319,6 +346,22 @@ RESOURCES : BOOKS: Title Only Book View
 .title img,
 .title p {
   display: none;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.title h2,
+.title h3 {
+  text-align: left;
+}
+.title h3 {
+  font-style: italic;
+  padding-bottom: 1em;
+}
+.title h2 {
+  padding-bottom: 0;
 }
 
 /* ==============================================
@@ -350,6 +393,11 @@ textarea:focus {
   padding-bottom: 2em;
 }
 
+.blog-post {
+  padding-bottom: 6em;
+  text-align: left;
+}
+
 /* ======================
 Submit Button
 ====================== */
@@ -361,17 +409,40 @@ Submit Button
   width: 160px;
   margin-top: 1.5em;
 }
-
-.twitter-wjs {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 0;
+h2.author {
+  text-align: center;
 }
-
-
 
 /* =====================================================
 media queries
 ===================================================== */
+@media (max-height:425px){
+  .nav-toggle span {
+    display: none;
+  }
+  .main-menu {
+    display: flex;
+    max-height: 50px;
+    background-color: transparent;
+  }
+  .main-menu ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    ;
+  }
+  .main-menu ul li {
+    margin: 0;
+    align-items: center;
+    padding-right: .5em;
+    text-align:center;
+    font-size: 1em;
+  }
+}
 
 @media (min-width:520px){
   .nav-toggle span {
@@ -397,38 +468,70 @@ media queries
     text-align:center;
     font-size: 1em;
   }
+  .list-style {
+    padding-top: 0;
+  }
+  .footer{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .footer-logo {
+    display: inherit;
+    flex-grow: 1;
+    min-width: 100%;
+    justify-content: center;
+  }
+  .footer-logo img{
+    height: 200px;
+    min-width: 271px;
+  }
+  .contact,
+  .address {
+    padding-right: 2em
+  }
 }
-.footer{
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
+@media (min-width:750px){
+  .content {
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  .form-page {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 85%;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+  }
+  .ask-form,
+  .faq {
+    flex: 1;
+    padding: 1em;
+  }
+  .title {
+    margin-top: 48px;
+  }
 }
-.footer-logo {
-  display: inherit;
-  flex-grow: 1;
-  width: 100%;
-  justify-content: center;
-}
-.footer-logo img{
-  height: 200px;
-  min-width: 271px;
-}
-.contact,
-.address {
-  padding-right: 2em
-}
-@media (min-width:900px){
+@media (min-width:980px){
 .footer {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
 .footer-logo {
-  flex-grow: 3;
-  align-self: flex-start;
-  max-width: 40%;
+  flex-grow: 0;
+  min-width: 271px;
+}
+.contact {
+  order: -1;
 }
 .contact,
 .address {
-  flex-grow: 1;
+  padding-top: 75px;
+  padding-right: 0;
 }
 }
